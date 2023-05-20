@@ -6,4 +6,29 @@ test_that("", {
     object <- NA
     expected <- 0
     expect_equal(object, expected)
+    
+    # Test case 1
+    input1 <- c(2, 3, 4, 5, 6)
+    expected1 <- c(5, -1, 20, 0.8)
+    result1 <- a1_q2(input1)
+    expect_equal(result1, expected1)  
+    
+    # Test case 2
+    input2 <- c(1, 1, 1, 1, 1)
+    expected2 <- c(2, 0, 1, 1)
+    result2 <- a1_q2(input2)
+    expect_equal(result2, expected2) 
+    
+    # Test case 3
+    input3 <- c(10, 5, 3, 2, 1)
+    expected3 <- c(15, 2, 6, 2)
+    result3 <- a1_q2(input3)
+    expect_equal(result3, expected3)  
+    
+    # Test case 4
+    input4 <- c(100, 20, 10, 5, 2)
+    expected4 <- c(120, 10, 50, 2.5)
+    result4 <- a1_q2(input4)
+    expect_equal(result4, expected4)  
+    
 })
