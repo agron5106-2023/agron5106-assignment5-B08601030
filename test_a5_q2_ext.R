@@ -15,7 +15,7 @@ tryCatch(
   check_unvalid_input(input1)
   },
   error = function(e) {
-    print("====Invalid input====")
+    print("====Invalid Input====")
     print(e)
   }
 )
@@ -39,6 +39,23 @@ tryCatch(
   }
 )
 
+check_zero_division <- function(input) {
+  if (input[5] == 0) {
+    stop("Zero division error: Division by zero is not allowed.")
+  }
+}
+
+input3=c(2, 3, 4, 6, 0) 
+
+tryCatch(
+  {
+    check_zero_division(input3)
+  },
+  error = function(e) {
+    print("====Zero Division Error====")
+    print(e)
+  }
+)
 
 
     
