@@ -18,7 +18,7 @@ a5_q2 <- function(input) {
   }
   
   check_negative_division <- function(x4, x5) {
-    if (x4 < 0 & x5 < 0) {
+    if (x4 < 0 or x5 < 0) {
       stop("Negative division error: Both dividend and divisor are negative.")
     }
   }
