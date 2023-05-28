@@ -6,10 +6,11 @@ a5_q2 <- function(input) {
   }
   
   check_invalid_input_type <- function(input) {
-    if (!is.list(input)) {
-      stop("Invalid input type: Input should be a list.")
+    if (!is.vector(input)) {
+      stop("Invalid input type: Input should be a vector.")
     }
   }
+  
   check_zero_division <- function(x5) {
     if (x5 == 0) {
       stop("Zero division error: Division by zero is not allowed.")
@@ -38,6 +39,7 @@ a5_q2 <- function(input) {
       check_missing_value(x2)
       check_missing_value(x3)
       check_missing_value(x4)
+      
       x1 <- input[[1]]
       x2 <- input[[2]]
       x3 <- input[[3]]
@@ -48,6 +50,7 @@ a5_q2 <- function(input) {
                   round(x2 - x3, 2),
                   round(x3 * x4, 2),
                   round(x4 / x5, 2))
+      
       return(answer)
     },
     error = function(e) {
