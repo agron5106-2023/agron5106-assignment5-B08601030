@@ -31,3 +31,30 @@ test_that("test_missing_value", {
   expect_equal(result4, expected4)
 })
 
+test_that("test_missing_value", {
+  input5 <- c(1, 2, 3, NA, 3)
+  expected5 <- "Error in check_missing_value(input): Missing value error: Input contains missing values.\n"
+  result5 <- a5_q2(input5)
+  expect_equal(result5, expected5)
+})
+
+test_that("test_missing_value", {
+  input6 <- c(1, 2, NA, 4, 3)
+  expected6 <- "Error in check_missing_value(input): Missing value error: Input contains missing values.\n"
+  result6 <- a5_q2(input6)
+  expect_equal(result6, expected6)
+})
+
+test_that("test_missing_value", {
+  input7 <- c(1, NA, 2, 4, 3)
+  expected7 <- "Error in check_missing_value(input): Missing value error: Input contains missing values.\n"
+  result7 <- a5_q2(input7)
+  expect_equal(result7, expected7)
+})
+
+test_that("test_missing_value", {
+  input8 <- c(NA, 9, 2, 4, 3)
+  expected8 <- "Error in check_missing_value(input): Missing value error: Input contains missing values.\n"
+  result8 <- a5_q2(input8)
+  expect_equal(result8, expected8)
+})
