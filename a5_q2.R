@@ -1,12 +1,49 @@
-
 a5_q2 <- function(input) {
+  check_invalid_input <- function(input) {
+    if (any(!is.numeric(input))) {
+      stop("Invalid input: Input should contain only numeric values.")
+    }
+  }
+  
+  check_invalid_input_type <- function(input) {
+    if (!is.list(input)) {
+      stop("Invalid input type: Input should be a list.")
+    }
+  }
+  check_zero_division <- function(x5) {
+    if (x5 == 0) {
+      stop("Zero division error: Division by zero is not allowed.")
+    }
+  }
+  
+  check_negative_division <- function(x4, x5) {
+    if (x4 < 0 & x5 < 0) {
+      stop("Negative division error: Both dividend and divisor are negative.")
+    }
+  }
+  
+  check_missing_value <- function(x) {
+    if (is.na(x)) {
+      stop("Missing value error: Input contains missing values.")
+    }
+  }
+  
   tryCatch(
     {
+      check_invalid_input(input)
+      check_invalid_input_type(input)
+      check_zero_division(x5)
+      check_negative_division(x4, x5)
+      check_missing_value(x1)
+      check_missing_value(x2)
+      check_missing_value(x3)
+      check_missing_value(x4)
       x1 <- input[[1]]
       x2 <- input[[2]]
       x3 <- input[[3]]
       x4 <- input[[4]]
       x5 <- input[[5]]
+      
       answer <- c(round(x1 + x2, 2),
                   round(x2 - x3, 2),
                   round(x3 * x4, 2),
@@ -14,9 +51,8 @@ a5_q2 <- function(input) {
       return(answer)
     },
     error = function(e) {
-      return(NA)
+      print(paste(e))
     }
   )
 }
-
 
