@@ -36,4 +36,17 @@ test_that("test_int4", {
   expect_equal(result4, expected4)
 })
 
+test_that("test_float1", {
+  input5 <- c(0.5, 0.1, 0.2, 0.3, 0.4)
+  expected5 <- c(0.6, -0.1, 0.06, 0.75)
+  result5 <- a5_q2(input5)
+  expect_equal(result5, round(expected5, 2))
+})
+
+test_that("test_float2", {
+  input6 <- c(1.5, 2.2, 3.7, 4.1, 0.9)
+  expected6 <- c(3.7, -1.5, 15.17, 4.56)
+  result6 <- a5_q2(input6)
+  expect_equal(result6, round(expected6, 2))
+})
     
