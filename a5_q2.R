@@ -26,17 +26,18 @@ a5_q2 <- function(input) {
   
   tryCatch(
     {
+      check_invalid_input(input)
+      check_invalid_input_type(input)
+      check_missing_value(input)
+      
       x1 <- input[[1]]
       x2 <- input[[2]]
       x3 <- input[[3]]
       x4 <- input[[4]]
-      x5 <- input[[5]]
+      x5 <- input[[5]] # Move this assignment here
       
-      check_invalid_input(input)
-      check_invalid_input_type(input)
-      check_zero_division(x5)
-      check_missing_value(input)
-
+      check_zero_division(x5) # Call check_zero_division after assigning x5
+      
       answer <- c(round(x1 + x2, 2),
                   round(x2 - x3, 2),
                   round(x3 * x4, 2),
@@ -49,5 +50,3 @@ a5_q2 <- function(input) {
     }
   )
 }
-
-
