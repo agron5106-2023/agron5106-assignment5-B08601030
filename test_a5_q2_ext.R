@@ -27,7 +27,7 @@ test_that("test_zero_division", {
 test_that("test_missing_value", {
   input4 <- c(1, 2, 3, -4, NA)
   expected4 <- "Error in check_missing_value(input): Missing value error: Input contains missing values.\n"
-  result4 <- capture_output(a5_q2(input4))
-  expect_equal(result4[1], expected4)
+  result4 <- a5_q2(input4)
+  expect_equal(result4, expected4)
 })
 
