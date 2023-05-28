@@ -2,12 +2,6 @@ library(testthat)
 
 source("a5_q2.R")
 
-test_that("testing_a5_q2", {
-    object <- NA
-    expected <- 0
-    expect_equal(object, expected)})
-    
-
 test_that("test_int1", {
   input1 <- c(2, 3, 4, 5, 6)
   expected1 <- c(5, -1, 20, 0.83)
@@ -50,3 +44,31 @@ test_that("test_float2", {
   expect_equal(result6, round(expected6, 2))
 })
     
+test_that("test_all_negative_numbers", {
+  input7 <- c(-2, -3, -4, -5, -6)
+  expected7 <- c(-5, 1, 20, 0.83)
+  result7 <- a5_q2(input7)
+  expect_equal(result7, expected7)
+})
+
+test_that("test_mixed_numbers1", {
+  input8 <- c(-2, 3, -4, 5, -6)
+  expected8 <- c(1, 7, -20, -0.83)
+  result8 <- a5_q2(input8)
+  expect_equal(result8, expected8)
+})
+
+
+test_that("test_mixed_numbers2", {
+  input9 <- c(10, -5, 3, -2, 1)
+  expected9 <- c(5, -8, -6, -2)
+  result9 <- a5_q2(input9)
+  expect_equal(result9, expected9)
+})
+
+test_that("test_large_numbers", {
+   input10 <- c(1000000, 2000000, 3000000, 4000000, 5000000)
+   expected10<- c(3000000, -1000000, 12000000000000, 0.8)
+   result10 <- a5_q2(input10)
+   expect_equal(result10, expected10)
+ })
