@@ -11,16 +11,33 @@ check_unvalid_input <- function(input) {
 input1=c("a","b","c","d","e")
 
 tryCatch(
-  check_unvalid_input(input1),
+  {
+  check_unvalid_input(input1)
+  },
   error = function(e) {
     print("====Invalid input====")
-    print(paste(e))
+    print(e)
   }
 )
 
 
+check_unvalid_input_type <- function(input) {
+  if (!is.list(input)) {
+    stop("Invalid input type: Input should be a list.")
+  }
+}
 
+input2 <- "not a list"  
 
+tryCatch(
+  {
+    check_unvalid_input_type(input2)
+  },
+  error = function(e) {
+    print("====Invalid Input Type Check Error====")
+    print(e)
+  }
+)
 
 
 
