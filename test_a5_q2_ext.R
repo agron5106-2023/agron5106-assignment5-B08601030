@@ -27,7 +27,7 @@ check_unvalid_input_type <- function(input) {
   }
 }
 
-input2 <- "not a list"  
+input2 = "not a list"  
 
 tryCatch(
   {
@@ -57,6 +57,23 @@ tryCatch(
   }
 )
 
+check_negative_division <- function(input) {
+  if (input[4] < 0) {
+    stop("Negative division error: Division by negative number is not allowed.")
+  }
+}
+
+input4=c(2, 3, 4, -5, 6)
+
+tryCatch(
+  {
+    check_negative_division(input4)
+  },
+  error = function(e) {
+    print("====Negative Division Error====")
+    print(e)
+  }
+)
 
     
 
