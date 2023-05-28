@@ -10,7 +10,7 @@ test_that("testing_a5_q2", {
 
 test_that("test_int1", {
   input1 <- c(2, 3, 4, 5, 6)
-  expected1 <- c(5, -1, 20, 0.8)
+  expected1 <- c(5, -1, 20, 0.83)
   result1 <- a5_q2(input1)
   expect_equal(result1, expected1)
 })
