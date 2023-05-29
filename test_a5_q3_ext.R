@@ -4,7 +4,7 @@ source("a5_q3.R")
 
 test_that("test_invalid_input", {
   input <- list(x = "invalid", y = 2)
-  expected <- "Error in check_invalid_input(input$x): Invalid input: Input should be a numeric number.\n"
+  expected <- "Error in check_invalid_input(input$x): Error in check_invalid_input(input): Invalid input: Input should contain only numeric values.\n"
   result <- a5_q3(input)
   expect_equal(result, expected)
 })
