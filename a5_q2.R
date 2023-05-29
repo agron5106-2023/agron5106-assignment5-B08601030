@@ -34,9 +34,9 @@ a5_q2 <- function(input) {
       x2 <- input[[2]]
       x3 <- input[[3]]
       x4 <- input[[4]]
-      x5 <- input[[5]] # Move this assignment here
+      x5 <- input[[5]] 
       
-      check_zero_division(x5) # Call check_zero_division after assigning x5
+      check_zero_division(x5) 
       
       answer <- c(round(x1 + x2, 2),
                   round(x2 - x3, 2),

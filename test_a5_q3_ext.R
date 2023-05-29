@@ -23,9 +23,18 @@ test_that("test_zero_division", {
   expect_equal(result, expected)
 })
 
-test_that("test_missing_value", {
+test_that("test_missing_value1", {
+  input <- list(x = NA, y = 5)
+  expected <- "Error in check_missing_value(input$x): Missing value error: Input contains missing values.\n"
+  result <- a5_q3(input)
+  expect_equal(result, expected)
+})
+
+test_that("test_missing_value2", {
   input <- list(x = 5, y = NA)
   expected <- "Error in check_missing_value(input$y): Missing value error: Input contains missing values.\n"
   result <- a5_q3(input)
   expect_equal(result, expected)
 })
+
+
